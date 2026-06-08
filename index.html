@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aishu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+.container{
+position:relative;
+z-index:2;
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff4f81;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+margin:30px 0;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.timeline{
+text-align:left;
+max-width:500px;
+margin:auto;
+line-height:2;
+font-size:18px;
+}
+
+#surprise{
+display:none;
+font-size:3rem;
+font-family:'Dancing Script',cursive;
+margin-top:40px;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+from{
+transform:scale(.5);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.footer{
+padding:50px 20px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+<section class="hero">
+<h1>For Aishu ❤️</h1>
+
+<p>
+A small surprise from someone who is extremely grateful
+to have you in his life.
+</p>
+
+<button class="btn" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+Open My Heart ❤️
+</button>
+</section>
+
+<div id="letter" class="card">
+<h2>💌 Dear Aishu</h2>
+
+<p>
+Thank you for being a part of my life for more than
+one and a half years.
+
+From endless conversations and laughter,
+to becoming closer every day,
+you've made my life happier than you can imagine.
+
+And then came <b>13 April</b>.
+
+The day I finally got to see you.
+
+The day I got to hug you.
+
+The day I got to be with you.
+
+That day will always stay in my heart.
+</p>
+</div>
+
+<div class="card">
+<h2>🌸 Things I Love About You</h2>
+
+<p>
+❤️ Your smile<br>
+❤️ Your kindness<br>
+❤️ Your care<br>
+❤️ The way you understand me<br>
+❤️ The way you make me feel special<br>
+❤️ Simply being YOU
+</p>
+</div>
+
+<div class="card">
+<h2>📖 Our Journey</h2>
+
+<div class="timeline">
+🌱 We met<br>
+💬 Endless conversations<br>
+💕 Falling for each other<br>
+🤗 Meeting on 13 April<br>
+💖 Creating beautiful memories<br>
+✨ Still growing together
+</div>
+</div>
+
+<div class="card">
+<h2>💗 Thank You</h2>
+
+<p>
+Thank you for staying.
+
+Thank you for trusting me.
+
+Thank you for supporting me.
+
+No matter where life takes us,
+I will always be grateful for every memory we have made together.
+
+You are one of the most beautiful parts of my life.
+</p>
+</div>
+
+<button class="btn" onclick="showLove()">
+One Last Thing...
+</button>
+
+<div id="surprise">
+I Love You Aishu ❤️<br>
+Forever & Always<br>
+— Rakesh
+</div>
+
+<div class="footer">
+Made with ❤️ for Aishu
+</div>
+
+</div>
+
+<script>
+function showLove(){
+document.getElementById("surprise").style.display="block";
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:'smooth'
+});
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+document.getElementById("hearts").appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
